@@ -1,9 +1,13 @@
-var http = require('http');
-var Server = http.createServer(function(req,res){
-    console.log('request was made:' + req.url);
-    res.writeHead(200,{'content-Type': 'text/plain'});
-    res.end('Hey Capgemini');
+var express = require('express');
+var fs = require('fs');
 
+var app = express();
+
+app.listen(2000);
+
+app.get('/', function (req , res)
+{
+    res.send("Hello World !");
 });
-Server.listen(3000, '127.0.0.1');
-console.log("Success, i'm listening from port:3000");
+
+console.log("Now listening to port 2000");

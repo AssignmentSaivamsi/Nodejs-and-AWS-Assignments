@@ -1,4 +1,8 @@
-var fs = require('fs');
- fs.mkdirSync('NODE.JS_ASSIGNMENT');
-var readdir = fs.readdirSync('NODE.JS_ASSIGNMENT');
-console.log(readdir);
+const express = require('express');
+const app = express();
+
+app.listen(3000);
+
+app.get('/home', (req, res)=>{
+  res.send("Hello, world!");
+})
